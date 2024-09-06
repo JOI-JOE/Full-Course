@@ -6556,3 +6556,4 @@ jQuery(document).ready(function () {
   HRT.All.checkCart();
   HRT.init();
 });
+console.log("haug");
