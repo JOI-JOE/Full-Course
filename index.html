@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div class="mainBody-theme template-index"></div>
+    <div class="mainBody-theme template-cart"></div>
+    <div class="mainBody-theme template-search"></div>
+
+    <script>
+      function setTemplateFromClass() {
+        var body = document.body;
+        window.template = body.classList.contains('template-index') ? 'index' : body.classList.contains('template-cart') ? 'cart' : 'search';
+      }
+
+      function initViews() {
+        var view = window.template,
+          that = this;
+
+        switch (view) {
+          case "index":
+            that.Index.init();
+            that.Quickview.init();
+            break;
+          case "collection":
+            that.Collection.init();
+            that.Quickview.init();
+            break;
+          // ... other cases from your original code
+          default:
+          // Handle default case
+        }
+      }
+
+      setTemplateFromClass();
+      initViews(); // Call initViews after setting template
+    </script>
+  </body>
+</html>
